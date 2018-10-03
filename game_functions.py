@@ -149,7 +149,7 @@ def update_screen(ai_settings, stats, screen, sb, ship, ufo, aliens, bullets, la
 
 
 def update_ufo(ufo, ai_settings):
-    if ufo.is_dead and pygame.time.get_ticks() - ufo.timer > 10000:
+    if ufo.is_dead and pygame.time.get_ticks() - ufo.timer > random.randint(8000, 12000):
         ufo.is_dead = False
         ufo.timer = pygame.time.get_ticks()
     else:
