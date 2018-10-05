@@ -104,5 +104,3 @@ class UFO(Sprite):
         self.x += (self.ai_settings.ufo_speed_factor *
                    self.ai_settings.ufo_direction)
         self.rect.x = self.x
-
-

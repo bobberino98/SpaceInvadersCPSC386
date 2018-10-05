@@ -1,7 +1,7 @@
 import pygame.font
 
 
-class Button():
+class Button:
 
     def __init__(self, screen, msg, y):
 

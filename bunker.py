@@ -19,18 +19,16 @@ class Bunker(Sprite):
         self.num = num
         self.damaged = False
 
-
     def is_destroyed(self):
         self.edit_im.convert("RGBA").save("images/bunker_edit_" + str(self.num) + ".png")
 
         px = self.edit_im.load()
 
         for x in range(0, 95):
-            for y in range (0, 71):
+            for y in range(0, 71):
                 if px[x, y] != (0, 0, 0, 0):
                     return False
         return True
-
 
     def update(self):
         if self.damaged:
@@ -51,5 +49,3 @@ class Bunker(Sprite):
             px[num_1, num_2] = (0, 0, 0, 0)
 
         self.edit_im.save("images/bunker_edit_"+str(self.num)+".png")
-
-

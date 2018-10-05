@@ -5,7 +5,6 @@ from bullet import Bullet
 from bullet import Explosion
 from bullet import Laser
 from alien import Alien
-import PIL
 import random
 
 
@@ -264,7 +263,7 @@ def update_aliens(ai_settings, stats, screen, sb, ship, ufo, aliens, bullets, la
 
 def fire_bullet(ai_settings, screen, ship, bullets):
     if len(bullets) < ai_settings.bullets_allowed:
-        new_bullet = Bullet(ai_settings, screen, ship, False)
+        new_bullet = Bullet(ai_settings, screen, ship)
         bullets.add(new_bullet)
         shoot_sound = pygame.mixer.Sound('sounds/shoot.wav')
         shoot_sound.play()
@@ -272,7 +271,7 @@ def fire_bullet(ai_settings, screen, ship, bullets):
 
 def fire_laser(ai_settings, screen, alien, lasers):
     if len(lasers) < ai_settings.lasers_allowed:
-        new_laser = Laser(ai_settings, screen, alien, True)
+        new_laser = Laser(ai_settings, screen, alien)
         lasers.add(new_laser)
         shoot_sound = pygame.mixer.Sound('sounds/shoot2.wav')
         shoot_sound.play()
